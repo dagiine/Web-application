@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.box {
+    width: 100px;
+    height: 150px;
+    text-align: left;
+    font-size: 40px;
+    background-color: #eeeff2;
+    border-left: 10px dotted #D0D0FF;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: yellow;
+    color: goldenrod;
+}
+
+#F {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
