@@ -6,7 +6,7 @@ function Cs142TemplateProcessor(template){
 }
 
 Cs142TemplateProcessor.prototype.fillIn = function(dictionary){
-    var template = this.template;
+    let template = this.template;
     console.log(dictionary);
 
     if(template.includes("{{month}}")){
