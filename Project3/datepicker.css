@@ -1,0 +1,92 @@
+body {
+    background-color: lightblue;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.calendar {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: white;    
+    border-radius: 25px ; 
+}
+
+.calendarHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.calendarHeaderMonth {
+    flex: 1;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.calendarHeaderButton {
+    margin: 5px;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.calendarDaysTable {
+    width: 100%;
+}
+
+.weekdaysHead {
+    margin-bottom: 10px;
+}
+
+.calendarWeekdayName {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.calendarDay {
+    line-height: 25px;
+    height: 25px;
+    padding: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+.calendarOffMonthDay {
+    color: gray;
+}
+
+.calendarOnMonthDay:hover,
+.calendarOffMonthDay:hover {
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+.calendarCurrentMonthDay {
+    color: white;
+    background-color: navy;
+    border-radius: 20px;
+}
+
+.calendarCurrentMonthDay:hover {
+    background-color: blue;
+}
