@@ -51,7 +51,8 @@ class DatePicker {
         const headerMonth = document.createElement("span");
         headerMonth.classList.add("calendarHeaderMonth");
     
-        const monthNames = ["1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар"];
+        const monthNames = ["1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", 
+            "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар"];
 
         const headerMonthStr = monthNames[date.getMonth()] + " " + date.getFullYear();
         headerMonth.append(headerMonthStr);
@@ -78,7 +79,7 @@ class DatePicker {
     weekdaysTableHead() {
         const row = document.createElement("tr");
 
-        const weekdayNames = ["Да", "Мя", "Лх", "Пү", "Ба", "Бя", "Ня"];
+        const weekdayNames = ["Ня", "Да", "Мя", "Лх", "Пү", "Ба", "Бя"];
         for (const day of weekdayNames) {
             const dayElement = document.createElement("th");
             dayElement.classList.add("calendarWeekdayName");
@@ -171,11 +172,28 @@ class DatePicker {
         const contentElement = document.createElement("div");
         contentElement.classList.add("calendarDay");
 
-        if (dayType === "offMonthDay") contentElement.classList.add("calendarOffMonthDay");
-        else if (dayType === "onMonthDay") contentElement.classList.add("calendarOnMonthDay");
-        else if (dayType === "currentMonthDay") contentElement.classList.add("calendarCurrentMonthDay");
+        if (dayType === "offMonthDay") {
+            contentElement.classList.add("calendarOffMonthDay");
+            tableDataElement.classList.add("calendarOffMonthDay");
+        } else if (dayType === "onMonthDay") {
+            contentElement.classList.add("calendarOnMonthDay");
+        } else if (dayType === "currentMonthDay") {
+            contentElement.classList.add("calendarCurrentMonthDay");
+        }
 
         contentElement.append(day);
+
+        if (dayType === "onMonthDay" || dayType === "currentMonthDay") {
+            contentElement.addEventListener("click", () => {
+                const selectedDate = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth(), day);
+                this.callback(this.id, {
+                    year: selectedDate.getFullYear(),
+                    month: selectedDate.getMonth() + 1,
+                    day: selectedDate.getDate()
+                });
+            });
+        }
+
         tableDataElement.append(contentElement);
 
         return tableDataElement;
