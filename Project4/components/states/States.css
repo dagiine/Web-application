@@ -1,0 +1,34 @@
+/*
+CSS for the CS142 project #4 Problem #2 states component
+
+Since CSS uses a global name space for classes we should use names starting with
+cs142-states- here.
+*/
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.state-input{
+    text-align: center;
+    color: lightpink;
+    font-family: Courier New, monospace;
+    font-weight: bold;
+}
+
+.search-result li {
+    color: lightpink;
+    font-family: Courier New, monospace;
+    text-align: center;
+}
+
+.filter {
+    font-family: Courier New, monospace;
+    font-size: large;
+    color: lightpink;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 20px;
+}
