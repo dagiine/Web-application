@@ -3,9 +3,9 @@
 
 🌼 Project 1 - 25/25 + 2
 
-🌼 Project 2 - 25/20
+🌼 Project 2 - 25/20 (Elint davaagui)
 
-🌼 Project 3 - 50/
+🌼 Project 3 - 50/40 (Elint davaagui)
 
 🌼 Project 4 - 40/
 
