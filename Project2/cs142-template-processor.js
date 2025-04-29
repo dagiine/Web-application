@@ -1,15 +1,15 @@
 "use strict";
 
 function Cs142TemplateProcessor(template) {
-    console.log(template); // Загварыг хэвлэж харуулах
-    this.template = template; // Загварыг this.template дээр хадгалах
+    console.log(template); 
+    this.template = template; 
 }
 
 Cs142TemplateProcessor.prototype.fillIn = function(dictionary) {
-    const template = this.template; // Загварыг хувьсагчид хадгалах
-    console.log(dictionary); // Dictionary объектыг хэвлэж харуулах
+    const template = this.template;
+    console.log(dictionary);
 
-    let result = ""; // Эцсийн үр дүнг хадгалах хувьсагч
+    let result = ""; 
     let i = 0;
 
     // Template-ийг дүрсэлж, placeholder-уудыг dictionary-ээс утгаар солих
@@ -35,6 +35,6 @@ Cs142TemplateProcessor.prototype.fillIn = function(dictionary) {
         }
     }
 
-    console.log(result); // Дүүргэсэн загварыг хэвлэж харуулах
+    console.log(result);
     return result;
 };
