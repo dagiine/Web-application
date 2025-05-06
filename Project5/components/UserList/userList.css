@@ -1,0 +1,37 @@
+.user-list-container {
+    margin: 24px;
+    padding: 16px;
+    background-color: #f2f4f8;
+    border-radius: 12px;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-list-item {
+    padding: 12px 0;
+  }
+  
+  .user-list-link {
+    text-decoration: none;
+    width: 100%;
+  }
+  
+  .user-list-button {
+    text-transform: capitalize;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-list-button:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .user-list-text {
+    color: #7b1fa2;
+    font-size: 1rem;
+    font-weight: 500;
+  }  
