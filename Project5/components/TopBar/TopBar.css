@@ -1,19 +1,9 @@
-.topbar-appbar {
-  background-color: #1e1e2f;
-  padding: 0 24px;
-  border-bottom: 2px solid #00bcd4;
+.cs142-topbar-appBar {
+  height: 60;
+  justify-content: 'center';
 }
 
-.topbar-title {
-  color: #00bcd4;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.topbar-view {
-  color: #ffffff;
-  font-size: 16px;
-  font-style: italic;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.right{
+  position: absolute;
+  right: 1em;
 }

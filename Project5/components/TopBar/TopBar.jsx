@@ -1,45 +1,41 @@
-import React from "react";
-import { AppBar, Toolbar, Typography, Grid } from "@material-ui/core";
+import React from 'react';
+import {AppBar, Toolbar, Typography} from '@material-ui/core';
 import './TopBar.css';
 import fetchModel from '../../lib/fetchModelData';
 
+/**
+ * Define TopBar, a React componment of CS142 project #5
+ */
 class TopBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      view: this.props.view,
-      version: null,
-    };
-  }
+    this.versionToDisplay = null;
 
-  componentDidUpdate(prevProps) {
-    if (this.state.view !== this.props.view) {
-      this.setState({ view: this.props.view });
-      fetchModel("http://localhost:3000/test/info")
-        .then(response => this.setState({ version: response.data.__v }));
-    }
+    fetchModel('http://localhost:3000/test/info')
+    .then(res => {
+      this.versionToDisplay = res.data.__v;
+    })
+    .catch(err => console.log(err));
   }
 
   render() {
+    let right = (
+      <Typography className='right' variant="h5" color="inherit">
+        {this.props.view === 'photo' ? 'Photos of ' : ''}
+        {this.props.user ? this.props.user : ''}
+      </Typography>
+    );
+
     return (
-      <AppBar className="topbar-appbar" position="fixed" elevation={2}>
+      <AppBar className="cs142-topbar-appBar" position="absolute">
         <Toolbar>
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item>
-              <Typography className="topbar-title" variant="h6">
-                Dagiimaa
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography className="topbar-view">
-                {this.state.view}
-              </Typography>
-            </Grid>
-          </Grid>
+          <Typography variant="h6" color="inherit">
+            Hey, Dagiimaa!
+          </Typography>
+          {right}
         </Toolbar>
       </AppBar>
     );
   }
 }
-
 export default TopBar;

@@ -41,6 +41,7 @@ class UserList extends React.Component {
   render() {
     return (
       <div className="user-list-container">
+        <h2 className="user-list-title">Users</h2>
         <List component="nav">
           {this.listUsers()}
         </List>

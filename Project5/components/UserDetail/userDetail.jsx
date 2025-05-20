@@ -1,13 +1,11 @@
 import React from 'react';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Paper, Typography, Box, Button, Grid } from '@material-ui/core';
+import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 
 import './userDetail.css';
 import fetchModel from '../../lib/fetchModelData';
 
-/**
- * Define UserDetail, a React component of CS142 project #5
- */
 class UserDetail extends React.Component {
   constructor(props) {
     super(props);
@@ -17,13 +15,17 @@ class UserDetail extends React.Component {
   }
 
   componentDidMount() {
-    this.componentDidUpdate();
+    const userId = this.props.match.params.userId;
+    fetchModel(`/user/${userId}`).then(response => {
+      this.setState({ user: response.data });
+    });
   }
 
-  componentDidUpdate() {
-    const userId = this.props.match.params.userId;
-    if (userId.slice(1) !== this.state.user._id) {
-      fetchModel(`/user/${userId}`).then(response => {
+  componentDidUpdate(prevProps) {
+    const prevId = prevProps.match.params.userId;
+    const currentId = this.props.match.params.userId;
+    if (prevId !== currentId) {
+      fetchModel(`/user/${currentId}`).then(response => {
         this.setState({ user: response.data });
       });
     }
@@ -33,45 +35,47 @@ class UserDetail extends React.Component {
     const user = this.state.user;
 
     return (
-      <Router>
-        <Box className="user-detail-container">
-          <Paper className="user-detail-paper">
-            <Grid container spacing={2} wrap="nowrap" alignItems="center">
-              <Grid item>
-                <Link to={`/photos/${user._id}`} className="user-detail-link">
-                  <Button className="user-detail-photo-button">
-                    Photos
-                  </Button>
-                </Link>
-              </Grid>
-              <Grid item>
-                <Grid container direction="column" spacing={1}>
-                  <Grid item>
-                    <Typography className="user-detail-name">
-                      {user.first_name + ' ' + user.last_name}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography className="user-detail-info">
-                      Location: {user.location}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography className="user-detail-info">
-                      Occupation: {user.occupation}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography className="user-detail-info">
-                      Description: {user.description}
-                    </Typography>
-                  </Grid>
+      <Box className="user-detail-container">
+        <Paper className="user-detail-paper">
+          <Grid container direction="column" spacing={2}>
+            <Grid item>
+              <Link to={`/photos/${user._id}`} className="user-detail-link">
+                <Button
+                  variant="contained"
+                  className="user-detail-photo-button"
+                  startIcon={<PhotoCameraIcon />}
+                >
+                  Photos
+                </Button>
+              </Link>
+            </Grid>
+
+            <Grid item>
+              <Typography className="user-detail-name">
+                {user.first_name + ' ' + user.last_name}
+              </Typography>
+            </Grid>
+
+            <Grid item>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <Typography className="user-detail-info">
+                    <strong>Location:</strong> {user.location}
+                  </Typography>
+                  <Typography className="user-detail-info">
+                    <strong>Occupation:</strong> {user.occupation}
+                  </Typography>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Typography className="user-detail-info">
+                    <strong>Description:</strong> {user.description}
+                  </Typography>
                 </Grid>
               </Grid>
             </Grid>
-          </Paper>
-        </Box>
-      </Router>
+          </Grid>
+        </Paper>
+      </Box>
     );
   }
 }

@@ -1,37 +1,58 @@
+/* Container for the entire user list */
 .user-list-container {
-    margin: 24px;
-    padding: 16px;
-    background-color: #f2f4f8;
-    border-radius: 12px;
-    max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-list-item {
-    padding: 12px 0;
-  }
-  
-  .user-list-link {
-    text-decoration: none;
-    width: 100%;
-  }
-  
-  .user-list-button {
-    text-transform: capitalize;
-    width: 100%;
-    justify-content: flex-start;
-    padding: 12px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    transition: background-color 0.3s ease;
-  }
-  
-  .user-list-button:hover {
-    background-color: #e0f7fa;
-  }
-  
-  .user-list-text {
-    color: #7b1fa2;
-    font-size: 1rem;
-    font-weight: 500;
-  }  
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Title at the top */
+.user-list-title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #3f51b5; /* Material UI Primary color */
+  border-bottom: 2px solid #3f51b5;
+  padding-bottom: 12px;
+}
+
+/* List item containing each user */
+.user-list-item {
+  padding: 0;
+}
+
+/* Removes default underline and styling for link */
+.user-list-link {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: block;
+}
+
+/* Button used for each user entry */
+.user-list-button {
+  width: 100%;
+  text-align: left;
+  padding: 16px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for user buttons */
+.user-list-button:hover {
+  background-color: #e8eaf6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(63, 81, 181, 0.2);
+}
+
+/* User name text */
+.user-list-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333333;
+}

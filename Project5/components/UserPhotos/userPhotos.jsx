@@ -2,16 +2,7 @@ import React from 'react';
 import './userPhotos.css';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
-import {
-  Box,
-  Paper,
-  Typography,
-  Card,
-  CardMedia,
-  CardContent,
-  Divider
-} from '@material-ui/core';
-
+import {Box, Paper, Typography, Card, CardMedia, CardContent, Divider} from '@material-ui/core';
 import fetchModel from '../../lib/fetchModelData';
 
 /**
@@ -63,24 +54,36 @@ class UserPhotos extends React.Component {
   };
 
   listPhotos = () => {
-    return this.state.photo.map((photo) => (
-      <Paper className="user-photo-block" elevation={3} key={photo._id}>
-        <Card className="user-photo-card" variant="outlined">
-          <CardMedia
-            component="img"
-            image={`images/${photo.file_name}`}
-            className="user-photo-image"
-          />
-          <CardContent>
-            <Typography className="photo-date">{photo.date_time}</Typography>
-          </CardContent>
-        </Card>
+  return this.state.photo.map((photo) => (
+    <Paper className="user-photo-block" elevation={3} key={photo._id}>
+      <Card className="user-photo-card" variant="outlined">
+        <CardMedia
+          component="img"
+          image={`images/${photo.file_name}`}
+          className="user-photo-image"
+        />
+        <CardContent>
+          <Typography className="photo-date">{photo.date_time}</Typography>
+          <button className="like-button"> 👍🏻 Like </button>
+        </CardContent>
+      </Card>
+
         <Box className="user-photo-comments">
           {this.cardOfComment(photo)}
+
+            <div className="comment-input-box">
+              <input
+               type="text"
+               placeholder="Add a comment..."
+               className="comment-input"
+               disabled
+              />
+              <button className="comment-post-button" disabled>Post</button>
+            </div>
         </Box>
-      </Paper>
-    ));
-  };
+    </Paper>
+  ));
+};
 
   render() {
     return <Box className="user-photo-container">{this.listPhotos()}</Box>;

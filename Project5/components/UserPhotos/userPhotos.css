@@ -1,68 +1,119 @@
+/* Container for all photos */
 .user-photo-container {
-    margin: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  .user-photo-block {
-    display: flex;
-    gap: 24px;
-    padding: 16px;
-    border-radius: 12px;
-    background-color: #fafafa;
-  }
-  
-  .user-photo-card {
-    width: 300px;
-    min-height: 250px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  .user-photo-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .photo-date {
-    color: #607d8b;
-    font-size: 0.9rem;
-  }
-  
-  .user-photo-comments {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .user-photo-comment-card {
-    width: 300px;
-    min-height: 250px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-  }
-  
-  .comment-date {
-    color: #9e9e9e;
-    font-size: 0.8rem;
-    margin-bottom: 8px;
-  }
-  
-  .comment-user-link {
-    text-decoration: none;
-  }
-  
-  .comment-user-name {
-    color: #7b1fa2;
-    font-weight: bold;
-  }
-  
-  .comment-text {
-    margin-top: 8px;
-    color: #424242;
-  }
-  
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Each photo block (photo + comments) */
+.user-photo-block {
+  margin-bottom: 30px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #fafafa;
+}
+
+/* Card containing the image and like button */
+.user-photo-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Image styling */
+.user-photo-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Photo date */
+.photo-date {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 8px;
+}
+
+.like-button {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.like-button:hover {
+  background-color: navy;
+  color: white;
+  transform: scale(1.05);
+}
+
+.user-photo-comments {
+  margin-top: 20px;
+}
+
+.user-photo-comment-card {
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.comment-user-link {
+  text-decoration: none;
+}
+
+.comment-user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3f51b5;
+  margin-bottom: 6px;
+}
+
+.comment-text {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.comment-input-box {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 12px;
+}
+
+.comment-input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 10px;
+  background-color: #f9f9f9;
+}
+
+.comment-post-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
