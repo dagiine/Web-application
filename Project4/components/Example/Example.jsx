@@ -1,6 +1,5 @@
 import React from 'react';
 import './Example.css';
-import Header from '../header/header';
 /*
   Since this component shows code we include the https://prismjs.com/
   formatter. We invoke it by labelling code blocks with class="language-jsx"
@@ -8,6 +7,7 @@ import Header from '../header/header';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.js';
 import '../../node_modules/prismjs/themes/prism.css';
+import Header from '../header/header';
 
 /* eslint-disable  react/jsx-one-expression-per-line */
 /* eslint-disable  react/destructuring-assignment */

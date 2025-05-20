@@ -14,7 +14,7 @@ class States extends React.Component {
     this.state = {
       filter: '',
       filteredStates: this.States,
-    }
+    };
   }
 
   handleInput(event) {
@@ -24,8 +24,8 @@ class States extends React.Component {
     });
   }
 
-  filteredStates(States, filter) {
-    return States.filter( st => st.toLowerCase().includes(filter.toLowerCase()));
+  filteredStates(filter) {
+    return this.states.filter(st => st.toLowerCase().includes(filter.toLowerCase()));
   }
 
   render() {

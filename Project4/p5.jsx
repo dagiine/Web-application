@@ -16,14 +16,12 @@ function P5() {
 
     return (
         <div>
-            <React.Fragment>
-                <HashRouter>
-                    <Link to='/states' style={linkStyle}>State</Link>
-                    <Link to='/example' style={linkStyle}>Example</Link>
-                    <Route path="/states" component={States} />
-                    <Route path="/example" component={Example} />
-                </HashRouter>
-            </React.Fragment>
+            <HashRouter>
+                <Link to='/states' style={linkStyle}>State</Link>
+                <Link to='/example' style={linkStyle}>Example</Link>
+                <Route path="/states" component={States} />
+                <Route path="/example" component={Example} />
+            </HashRouter>
         </div>
     );
 }
@@ -31,4 +29,4 @@ function P5() {
 ReactDOM.render (
     <P5/>,
     document.getElementById('reactapp'),
-)
+);
