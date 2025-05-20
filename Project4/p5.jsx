@@ -4,8 +4,8 @@ import { HashRouter, Route, Link } from "react-router-dom";
 
 import './styles/main.css';
 
-import Example from "./components/Example";
-import States from "./components/states";
+import Example from "./components/Example/Example";
+import States from "./components/states/States";
 
 function P5() {
     const linkStyle = {

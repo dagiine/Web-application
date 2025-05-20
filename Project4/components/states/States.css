@@ -16,18 +16,19 @@ cs142-states- here.
     color: lightpink;
     font-family: Courier New, monospace;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .search-result li {
     color: lightpink;
     font-family: Courier New, monospace;
-    text-align: center;
+    text-align: left;
 }
 
 .filter {
     font-family: Courier New, monospace;
     font-size: large;
-    color: lightpink;
+    color: plum;
     border-radius: 5px;
     outline: none;
     margin-bottom: 20px;

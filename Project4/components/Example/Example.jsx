@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './Example.css';
 import Header from '../header/header';
 /*
   Since this component shows code we include the https://prismjs.com/

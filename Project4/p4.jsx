@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './styles/main.css';
 import './styles/app.css';
 
-import Example from "./components/example/Example";
+import Example from "./components/Example/Example";
 import States from "./components/states/States";
 
 function App() {
