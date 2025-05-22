@@ -8,7 +8,7 @@ function cs142MakeMultiFilter(originalArray) {
     }
 
     var arrayFilter = function(filterCriteria, callback) {
-        // Хэрэв filterCriteria функц өгөгдсөн бол шүүлт хийнэ.
+        // Хэрэв filterCriteria функц өгөгдсөн бол filter хийнэ.
         if (typeof filterCriteria === 'function') {
             const  filteredArray = [];
 
@@ -17,7 +17,7 @@ function cs142MakeMultiFilter(originalArray) {
                     filteredArray.push(currentArray[j]); 
                 }
             }
-            // Шүүлт хийсэн массивыг шинэчилнэ.
+            // filter хийж үлдсэн массивыг шинэчилнэ.
             currentArray = filteredArray; 
 
             // Хэрэв callback функц өгөгдсөн бол дуудаж, эх массивыг this утгаар дамжуулна.

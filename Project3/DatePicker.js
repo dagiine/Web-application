@@ -153,10 +153,10 @@ class DatePicker {
     
         if (when === "before") {
             d.setDate(1);
-            const firstDayOfWeek = d.getDay();
+            const firstDayOfWeek = d.getDay(); 
             
             // Өмнөх сараас хэдэн өдөр харуулахыг тооцоолох
-            numOffDays = firstDayOfWeek;
+            numOffDays = firstDayOfWeek; 
             
             if (numOffDays > 0) {
                 d.setDate(0);

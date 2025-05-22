@@ -5,7 +5,6 @@ import {Grid, Paper} from '@material-ui/core';
 
 import './styles/main.css';
 
-// import necessary components
 import TopBar from './components/topBar/TopBar';
 import UserDetail from './components/userDetail/userDetail';
 import UserList from './components/userList/userList';
@@ -15,44 +14,50 @@ class PhotoShare extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: "Home"
+      view: "Home",
+      userFullName: ''
     };
-    this.changeView = this.changeView.bind(this);
   }
 
-  changeView = (newView, name) => {
-    this.setState({view: newView + '/' + name});
+  changeView = (newView, fullName) => {
+    this.setState({ view: newView, userFullName: fullName });
   };
 
   render() {
     return (
       <HashRouter>
-      <div>
-      <Grid container spacing={5}>
-        <Grid item xs={12}>
-          <TopBar view={this.state.view}/>
-        </Grid>
-        <div className="cs142-main-topbar-buffer"/>
-          <Grid item sm={3}>
-            <Paper className="cs142-main-grid-item">
-              <UserList />
-            </Paper>
+        <div>
+          <Grid container spacing={5}>
+            <Grid item xs={12}>
+              <TopBar view={this.state.view} user={this.state.userFullName} />
+            </Grid>
+            <div className="cs142-main-topbar-buffer" />
+            <Grid item sm={3}>
+              <Paper className="cs142-main-grid-item">
+                <UserList />
+              </Paper>
+            </Grid>
+            <Grid item sm={9}>
+              <Paper className="cs142-main-grid-item">
+                <Switch>
+                  <Route
+                    path="/users/:userId"
+                    render={props => (
+                      <UserDetail {...props} changeView={this.changeView} />
+                    )}
+                  />
+                  <Route
+                    path="/photos/:userId"
+                    render={props => (
+                      <UserPhotos {...props} changeView={this.changeView} />
+                    )}
+                  />
+                  <Route path="/users" component={UserList} />
+                </Switch>
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item sm={9}>
-            <Paper className="cs142-main-grid-item">
-              <Switch>
-                <Route path="/users/:userId"
-                  render={ props => <UserDetail {...props} changeView={this.changeView}/> }
-                />
-                <Route path="/photos/:userId"
-                  render ={ props => <UserPhotos {...props} changeView={this.changeView}/> }
-                />
-                <Route path="/users" component={UserList}  />
-              </Switch>
-            </Paper>
-          </Grid>
-      </Grid>
-      </div>
+        </div>
       </HashRouter>
     );
   }

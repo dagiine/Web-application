@@ -1,28 +1,28 @@
 import React from 'react';
-import {AppBar, Toolbar, Typography} from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import './TopBar.css';
 import fetchModel from '../../lib/fetchModelData';
 
 /**
- * Define TopBar, a React componment of CS142 project #5
+ * Define TopBar, a React component of CS142 project #5
  */
 class TopBar extends React.Component {
   constructor(props) {
     super(props);
-    this.versionToDisplay = null;
+    this.state = { version: '' };
 
     fetchModel('http://localhost:3000/test/info')
-    .then(res => {
-      this.versionToDisplay = res.data.__v;
-    })
-    .catch(err => console.log(err));
+      .then(res => {
+        this.setState({ version: res.data.__v });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
     let right = (
-      <Typography className='right' variant="h5" color="inherit">
-        {this.props.view === 'photo' ? 'Photos of ' : ''}
-        {this.props.user ? this.props.user : ''}
+      <Typography className='right' variant="h6" color="inherit">
+        {this.props.view.startsWith('photos') ? 'Photos of ' : ''}
+        {this.props.user || ''}
       </Typography>
     );
 
@@ -32,10 +32,12 @@ class TopBar extends React.Component {
           <Typography variant="h6" color="inherit">
             Hey, Dagiimaa!
           </Typography>
+          <div style={{ flexGrow: 1 }} />
           {right}
         </Toolbar>
       </AppBar>
     );
   }
 }
+
 export default TopBar;

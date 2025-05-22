@@ -26,7 +26,7 @@ Cs142TemplateProcessor.prototype.fillIn = function(dictionary) {
 
             i += 2;
 
-            // Dictionary-ээс утгыг олох
+            // Dictionary-ээс placeholder утга байвал утгыг нэмнэ
             result += dictionary[placeholder] || "";
         } else {
             // Placeholder биш, энгийн текст байвал

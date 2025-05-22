@@ -1,5 +1,6 @@
 "use strict";
 
+// Хувьсагчид local scope-т үлдэнэ
 (function() {
   /**
    * This file tests the CS142 Project 2 JavaScript assignment problems. It prints
@@ -15,6 +16,7 @@
   var p3Message = "SUCCESS";
 
   // Keep track of all the var statements
+  // Глобал хувьсагчуудаа шууд оруулсанг болиулсан
   var varDeclared = [];
 
   // Utility functions
@@ -130,6 +132,7 @@
   console.log("Test Cs142TemplateProcessor:", p2Message);
 
   // *** Test to see if the symbols we defined are in the global address space ***
+
   varDeclared.forEach(function (sym) {
     if (window[sym] !== undefined) {
       console.error("Found my symbol", sym, "in DOM");
