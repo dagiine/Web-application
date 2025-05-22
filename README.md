@@ -7,9 +7,9 @@
 
 🌼 Project 3 - 50/40 (Elint davaagui)
 
-🌼 Project 4 - 40/
+🌼 Project 4 - 40/40
 
-🌼 Project 5 - 65/ + 5
+🌼 Project 5 - 65/60 (Elint davaagui, nemelt hiigeegui)
 
 🌼 Project 6 - 55/ + 10
 
